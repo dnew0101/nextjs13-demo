@@ -1,3 +1,13 @@
+## Project Design
+
+This project is from a Javascript Mastery Tutorial on Next.js 13 (point being, not my own creation), and serves as a segway into utilizing the full functionality of what Next.js has to offer. With this project, I hope to acquire a level of competence and familiarity with this framework, and can get started on applying it to my own, original projects! 
+
+Thanks for the guidance, @JavascriptMastery!
+
+
+-----------------------------------------------------------
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
