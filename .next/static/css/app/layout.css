@@ -543,6 +543,9 @@ video {
 .gap-7{
   gap: 1.75rem;
 }
+.rounded-full{
+  border-radius: 9999px;
+}
 .text-start{
   text-align: start;
 }
