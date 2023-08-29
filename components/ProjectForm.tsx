@@ -4,6 +4,8 @@ import { SessionInterface } from "@/common.types"
 import { ChangeEvent } from "react";
 import Image from "next/image";
 import FormField from "./FormField";
+import { categoryFilters } from "@/constants";
+import CustomMenu from "./CustomMenu";
 
 type Props = {
     type: string,
@@ -83,7 +85,12 @@ const ProjectForm = ({ type, session }: Props) => {
                 setState={(value) => handleStateChange('title', value)}
             /> */}
 
-            {/* CustomInput Category... */}
+            <CustomMenu
+                title="Category"
+                state={form.category}
+                filters={categoryFilters}
+                setState={(value) => handleStateChange('category', value)}
+            />
 
             <div className="flexStart w-full">
                     <button>Create</button>
