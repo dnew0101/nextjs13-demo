@@ -4,6 +4,15 @@ import LoadMore from "@/components/LoadMore";
 import ProjectCard from "@/components/ProjectCard";
 import { fetchAllProjects } from "@/lib/actions";
 
+type SearchParams = {
+    category?: string;
+    endcursor?: string;
+}
+
+type Props = {
+    searchParams: SearchParams
+}
+
 type ProjectSearch = {
     projectSearch: {
         edges: { node: ProjectInterface }[];
@@ -14,15 +23,6 @@ type ProjectSearch = {
             endCursor: string;
         }
     }
-}
-
-type SearchParams = {
-    category?: string;
-    endcursor?: string;
-}
-
-type Props = {
-    searchParams: SearchParams
 }
 
 export const dynamic = 'force-dynamic';
@@ -45,7 +45,6 @@ const Home = async ({ searchParams: { category, endcursor }}: Props) => {
         )
     }
     const pagination = data?.projectSearch?.pageInfo;
-
     return (
         <section className="flex-start flex-col paddings mb-16">
             <Categories />   
@@ -64,13 +63,13 @@ const Home = async ({ searchParams: { category, endcursor }}: Props) => {
                 ))}
             </section>
             <LoadMore 
-                startCursor={pagination.startCursor}
-                endCursor={pagination.endCursor}
-                hasPreviousPage={pagination.hasPreviousPage}
-                hasNextPage={pagination.hasNextPage}
+                startCursor={pagination?.startCursor}
+                endCursor={pagination?.endCursor}
+                hasPreviousPage={pagination?.hasPreviousPage}
+                hasNextPage={pagination?.hasNextPage}
             />
         </section>
     )
-}
+};
 
 export default Home;
