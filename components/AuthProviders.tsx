@@ -38,9 +38,9 @@ const AuthProviders = () => {
           title='Sign In'
           handleClick={() => signIn(provider?.id)}
           />
-        ))};
+        ))}
       </div>
-    );
+    )
   };
 };
 
