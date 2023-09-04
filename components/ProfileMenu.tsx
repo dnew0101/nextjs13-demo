@@ -23,7 +23,7 @@ const ProfileMenu = ({ session }: { session: SessionInterface }) => {
                             className="rounded-full"
                             alt="user profile image"
                         />
-                    )};
+                    )}
                 </Menu.Button>
 
                 <Transition
