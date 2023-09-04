@@ -31,7 +31,7 @@ const FormField = ({ type, title, state, placeholder, isTextArea, setState }: Pr
             className="form_field-input"
             onChange={(e) => setState(e.target.value)}
             />
-        )};
+        )}
     </div>
   );
 };
