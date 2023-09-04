@@ -1,4 +1,4 @@
-import { User, Session } from 'next-auth'
+import { User, Session } from 'next-auth';
 
 export type FormState = {
     title: string;
@@ -23,7 +23,7 @@ export interface ProjectInterface {
       avatarUrl: string;
       id: string;
     };
-}
+};
 
 export interface UserProfile {
     id: string;
@@ -42,7 +42,7 @@ export interface UserProfile {
         endCursor: string;
       };
     };
-}
+};
 
 export interface SessionInterface extends Session {
   user: User & {
@@ -51,7 +51,7 @@ export interface SessionInterface extends Session {
     email: string;
     avatarUrl: string;
   };
-}
+};
 
 export interface ProjectForm {
   title: string;
@@ -60,4 +60,4 @@ export interface ProjectForm {
   liveSiteUrl: string;
   githubUrl: string;
   category: string;
-}
+};

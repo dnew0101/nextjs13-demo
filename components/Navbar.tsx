@@ -41,7 +41,6 @@ const Navbar = async () => {
             </Link>
           </>
         ) : (
-        /* @ts-expect-error Async Server Component */
           <AuthProviders />
         )};
       </div>
