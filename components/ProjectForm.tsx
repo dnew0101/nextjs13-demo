@@ -31,7 +31,7 @@ const ProjectForm = ({ type, session, project }: Props) => {
     })
 
     const handleStateChange = (fieldName: keyof FormState, value: string) => {
-        setForm((prevForm) => ({ ...prevForm, [fieldName]: value }));
+        setForm((prevForm) => ({ ...prevForm, [fieldName]: value }))
     };
 
     const handleChangeImage = (e: ChangeEvent<HTMLInputElement>) => {
@@ -107,7 +107,7 @@ const ProjectForm = ({ type, session, project }: Props) => {
                         className="sm:p-10 object-contain z-20" alt="image"
                         fill
                     />
-                )};
+                )}
             </div>
 
             <FormField

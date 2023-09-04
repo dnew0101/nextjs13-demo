@@ -10,12 +10,12 @@ export default function Modal({ children }: { children: ReactNode }) {
     const router = useRouter();
 
     const onDismiss = useCallback(() => {        
-        router.push("/");
+        router.push("/")
     }, [router]);
 
     const handleClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
         if ((e.target === overlay.current) && onDismiss) {
-            onDismiss();
+            onDismiss()
         }
     }, [onDismiss, overlay])
 
