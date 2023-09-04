@@ -1,5 +1,6 @@
 import { getUserProjects } from '@/lib/actions'
 import { ProjectInterface, UserProfile } from '@/common.types'
+
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -9,10 +10,10 @@ type Props = {
 }
 
 const RelatedProjects = async ({ userId, projectId }: Props) => {
-    const result = await getUserProjects(userId) as { user?: UserProfile}
+    const result = await getUserProjects(userId) as { user?: UserProfile};
 
     const filteredProjects = result?.user?.projects?.edges
-        ?.filter(({ node }: { node: ProjectInterface }) => node?.id !== projectId)
+        ?.filter(({ node }: { node: ProjectInterface }) => node?.id !== projectId);
 
     if (filteredProjects?.length === 0) return null;
 
@@ -41,10 +42,10 @@ const RelatedProjects = async ({ userId, projectId }: Props) => {
                         </div>
                     </Link>
                     </div>
-                ))}
+                ))};
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default RelatedProjects
+export default RelatedProjects;

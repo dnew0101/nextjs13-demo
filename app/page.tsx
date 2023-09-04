@@ -5,13 +5,13 @@ import ProjectCard from "@/components/ProjectCard";
 import { fetchAllProjects } from "@/lib/actions";
 
 type SearchParams = {
-    category?: string;
-    endcursor?: string;
-}
+    category?: string | null;
+    endcursor?: string | null;
+};
 
 type Props = {
-    searchParams: SearchParams
-}
+    searchParams: SearchParams;
+};
 
 type ProjectSearch = {
     projectSearch: {
@@ -21,29 +21,29 @@ type ProjectSearch = {
             hasNextPage: boolean;
             startCursor: string;
             endCursor: string;
-        }
-    }
-}
+        };
+    },
+};
 
 export const dynamic = 'force-dynamic';
 export const dynamicParams = true;
 export const revalidate = 0;
 
-const Home = async ({ searchParams: { category, endcursor }}: Props) => {
+const Home = async ({ searchParams: { category, endcursor } }: Props) => {
     const data = await fetchAllProjects(category, endcursor) as ProjectSearch;
 
     const projectsToDisplay = data?.projectSearch?.edges || [];
 
     if(projectsToDisplay.length === 0) {
-        return(
+        return (
             <section className="flexStart flex-col paddings">
                 <Categories />
 
                 <p className="no-result-test text-center">No projects found, go create some first.</p>
   
             </section>
-        )
-    }
+        );
+    };
     const pagination = data?.projectSearch?.pageInfo;
     return (
         <section className="flex-start flex-col paddings mb-16">
@@ -60,7 +60,7 @@ const Home = async ({ searchParams: { category, endcursor }}: Props) => {
                         avatarUrl={node?.createdBy?.avatarUrl}
                         userId={node?.createdBy?.id}
                     />
-                ))}
+                ))};
             </section>
             <LoadMore 
                 startCursor={pagination?.startCursor}
@@ -69,7 +69,7 @@ const Home = async ({ searchParams: { category, endcursor }}: Props) => {
                 hasNextPage={pagination?.hasNextPage}
             />
         </section>
-    )
+    );
 };
 
 export default Home;

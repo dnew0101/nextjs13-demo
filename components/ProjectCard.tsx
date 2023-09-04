@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import Image from "next/image"
+import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
     name: string;
     avatarUrl: string;
     userId: string;
-}
+};
 
 const ProjectCard = ({ id, image, title, name, avatarUrl, userId }: Props) => {
     const [randomLikes, setRandomLikes] = useState(0);
@@ -68,7 +68,7 @@ const ProjectCard = ({ id, image, title, name, avatarUrl, userId }: Props) => {
         </div>
 
     </div>
-  )
-}
+  );
+};
 
-export default ProjectCard
+export default ProjectCard;

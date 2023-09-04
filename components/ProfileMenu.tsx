@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -23,7 +23,7 @@ const ProfileMenu = ({ session }: { session: SessionInterface }) => {
                             className="rounded-full"
                             alt="user profile image"
                         />
-                    )}
+                    )};
                 </Menu.Button>
 
                 <Transition
@@ -50,7 +50,7 @@ const ProfileMenu = ({ session }: { session: SessionInterface }) => {
                                     height={80}
                                     alt="profile Image"
                                 />
-                            )}
+                            )};
                             <p className="font-semibold">{session?.user?.name}</p>
                         </div>
 
@@ -76,7 +76,7 @@ const ProfileMenu = ({ session }: { session: SessionInterface }) => {
                 </Transition>
             </Menu>
         </div>
-    )
-}
+    );
+};
 
-export default ProfileMenu
+export default ProfileMenu;

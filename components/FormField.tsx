@@ -5,7 +5,7 @@ type Props = {
     placeholder: string;
     isTextArea?: boolean;
     setState: (value: string) => void;
-}
+};
 
 const FormField = ({ type, title, state, placeholder, isTextArea, setState }: Props) => {
   return (
@@ -26,14 +26,14 @@ const FormField = ({ type, title, state, placeholder, isTextArea, setState }: Pr
             <input
             type={type || 'text'}
             placeholder={placeholder}
-            value={state}
             required
+            value={state}
             className="form_field-input"
             onChange={(e) => setState(e.target.value)}
             />
-        )}
+        )};
     </div>
-  )
-}
+  );
+};
 
-export default FormField
+export default FormField;

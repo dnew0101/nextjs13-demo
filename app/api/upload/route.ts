@@ -5,7 +5,7 @@ cloudinary.config({
     cloud_name: process.env.CLOUDINARY_NAME,
     api_key: process.env.CLOUDINARY_KEY,
     api_secret: process.env.CLOUDINARY_SECRET,
-})
+});
 
 export async function POST(request: Request) {
     const { path } = await request.json();
@@ -14,8 +14,8 @@ export async function POST(request: Request) {
         return NextResponse.json(
             { message: 'Image path is required'}, 
             { status: 400 }
-        )
-    }
+        );
+    };
 
     try {
         const options = {
@@ -23,11 +23,12 @@ export async function POST(request: Request) {
             unique_filename: false,
             overwrite: true,
             transformation: [{ width: 1000, height: 752, crop: 'scale' }]
-        }
+        };
+
         const result = await cloudinary.uploader.upload(path, options);
 
-        return NextResponse.json(result, { status: 200})
+        return NextResponse.json(result, { status: 200});
     } catch (error) {
-        return NextResponse.json( {message: error}, { status: 500})
-    }
-}
+        return NextResponse.json( {message: error}, { status: 500});
+    };
+};

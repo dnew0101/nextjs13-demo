@@ -1,25 +1,24 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
-import { getCurrentUser } from "@/lib/session"
-import { getProjectDetails } from "@/lib/actions"
-import Modal from "@/components/Modal"
-// import ProjectActions from "@/components/ProjectActions"
-import RelatedProjects from "@/components/RelatedProjects"
-import { ProjectInterface } from "@/common.types"
-import ProjectActions from "@/components/ProjectActions"
+import { getCurrentUser } from "@/lib/session";
+import { getProjectDetails } from "@/lib/actions";
+import Modal from "@/components/Modal";
+import RelatedProjects from "@/components/RelatedProjects";
+import { ProjectInterface } from "@/common.types";
+import ProjectActions from "@/components/ProjectActions";
 
 const Project = async ({ params: { id } }: { params: { id: string } }) => {
-    const session = await getCurrentUser()
-    const result = await getProjectDetails(id) as { project?: ProjectInterface}
+    const session = await getCurrentUser();
+    const result = await getProjectDetails(id) as { project?: ProjectInterface};
 
     if (!result?.project) return (
         <p className="no-result-text">Failed to fetch project info</p>
-    )
+    );
 
-    const projectDetails = result?.project
+    const projectDetails = result?.project;
 
-    const renderLink = () => `/profile/${projectDetails?.createdBy?.id}`
+    const renderLink = () => `/profile/${projectDetails?.createdBy?.id}`;
 
     return (
         <Modal>
@@ -101,7 +100,7 @@ const Project = async ({ params: { id } }: { params: { id: string } }) => {
             {/* @ts-expect-error Async Server Component */}
             <RelatedProjects userId={projectDetails?.createdBy?.id} projectId={projectDetails?.id} />
         </Modal>
-    )
-}
+    );
+};
 
-export default Project
+export default Project;

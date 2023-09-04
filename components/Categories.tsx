@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { usePathname, useRouter, useSearchParams } from "next/navigation"
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-import { categoryFilters } from "@/constants"
+import { categoryFilters } from "@/constants";
 
 const Categories = () => {
     const router = useRouter();
@@ -11,9 +11,9 @@ const Categories = () => {
 
     const category = searchParams.get('category');
 
-    const handleTags = (filter: string) => {
-        router.push(`${pathName}?category=${filter}`);
-    }
+    const handleTags = (item: string) => {
+        router.push(`${pathName}?category=${item}`);
+    };
 
 
   return (
@@ -26,16 +26,16 @@ const Categories = () => {
                     onClick={() => handleTags(filter)}
                     className={`${
                         category === filter
-                        ? 'bg-light-white-300 font-medium' :
-                        'font-normal'} px-4 py-3 rounded-lg
-                        capitalize whitespace-nowrap`}
+                            ? 'bg-light-white-300 font-medium' 
+                            :'font-normal'
+                        } px-4 py-3 rounded-lg capitalize whitespace-nowrap`}
                     >
-
+                        {filter}
                 </button>
             ))}
         </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Categories
+export default Categories;

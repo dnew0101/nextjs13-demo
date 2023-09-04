@@ -1,7 +1,7 @@
-import { ProjectInterface, UserProfile } from '@/common.types'
-import Image from 'next/image'
+import { ProjectInterface, UserProfile } from '@/common.types';
+import Image from 'next/image';
 
-import Link from 'next/link'
+import Link from 'next/link';
 import Button from "./Button";
 import ProjectCard from './ProjectCard';
 
@@ -65,10 +65,10 @@ const ProfilePage = ({ user }: Props) => (
                             userId={user.id}
                         />
                     )
-                )}
+                )};
             </div>
        </section>
    </section>
-)
+);
 
-export default ProfilePage
+export default ProfilePage;
