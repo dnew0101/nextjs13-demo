@@ -50,7 +50,7 @@ const ProfileMenu = ({ session }: { session: SessionInterface }) => {
                                     height={80}
                                     alt="profile Image"
                                 />
-                            )};
+                            )}
                             <p className="font-semibold">{session?.user?.name}</p>
                         </div>
 
