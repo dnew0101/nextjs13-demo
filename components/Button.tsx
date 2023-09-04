@@ -25,6 +25,6 @@ const Button = ({ title, leftIcon, rightIcon, handleClick, submitting, type, bgC
       {title}
       {rightIcon && <Image src={rightIcon} width={14} height={14} alt="right icon" />}
   </button>
-);
+)
 
 export default Button;

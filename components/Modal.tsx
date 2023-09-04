@@ -16,8 +16,8 @@ export default function Modal({ children }: { children: ReactNode }) {
     const handleClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
         if ((e.target === overlay.current) && onDismiss) {
             onDismiss();
-        };
-    }, [onDismiss, overlay]);
+        }
+    }, [onDismiss, overlay])
 
     return (
         <div ref={overlay} className="modal" onClick={(e) => handleClick(e)}>
@@ -29,5 +29,5 @@ export default function Modal({ children }: { children: ReactNode }) {
                 {children}
             </div>
         </div>
-    );
+    )
 };

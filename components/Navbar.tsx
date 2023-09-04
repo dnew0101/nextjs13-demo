@@ -27,7 +27,7 @@ const Navbar = async () => {
             <Link href={link.href} key={link.text}>
               {link.text}
             </Link>
-          ))};
+          ))}
         </ul>
       </div>
 
@@ -42,10 +42,10 @@ const Navbar = async () => {
           </>
         ) : (
           <AuthProviders />
-        )};
+        )}
       </div>
     </nav>
-  );
+  )
 };
 
 export default Navbar;

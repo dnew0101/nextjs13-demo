@@ -30,7 +30,13 @@ export const dynamicParams = true;
 export const revalidate = 0;
 
 const Home = async ({ searchParams: { category, endcursor } }: Props) => {
-    const data = await fetchAllProjects(category, endcursor) as ProjectSearch;
+    // Provide a default category value if 'category' is not specified
+    const defaultCategory = 'defaultCategory'; // Replace with your desired default category
+
+    // Determine the category to use (either from the URL or the default)
+    const selectedCategory = category || defaultCategory;
+
+    const data = fetchAllProjects(selectedCategory, endcursor) as unknown as ProjectSearch;
 
     const projectsToDisplay = data?.projectSearch?.edges || [];
 
@@ -42,7 +48,7 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
                 <p className="no-result-test text-center">No projects found, go create some first.</p>
   
             </section>
-        );
+        )
     };
     const pagination = data?.projectSearch?.pageInfo;
     return (
@@ -60,7 +66,7 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
                         avatarUrl={node?.createdBy?.avatarUrl}
                         userId={node?.createdBy?.id}
                     />
-                ))};
+                ))}
             </section>
             <LoadMore 
                 startCursor={pagination?.startCursor}
@@ -69,7 +75,7 @@ const Home = async ({ searchParams: { category, endcursor } }: Props) => {
                 hasNextPage={pagination?.hasNextPage}
             />
         </section>
-    );
+    )
 };
 
 export default Home;
