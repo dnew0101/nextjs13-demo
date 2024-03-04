@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Fragment } from "react";
 
 import { NavLinks } from "@/constants";
 import { getCurrentUser } from "@/lib/session";
@@ -12,6 +13,7 @@ const Navbar = async () => {
   const session = await getCurrentUser()
 
   return (
+    <Fragment>
     <nav className='flexBetween navbar'>
       <div className='flex-1 flexStart gap-10'>
         <Link href='/'>
@@ -45,6 +47,7 @@ const Navbar = async () => {
         )}
       </div>
     </nav>
+    </Fragment>
   )
 };
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { getProviders, signIn } from 'next-auth/react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 
 import Button from './Button';
 
@@ -22,26 +22,26 @@ const AuthProviders = () => {
   useEffect(() => {
     const fetchProviders = async () => {
       const res = await getProviders();
-
       setProviders(res);
-    }
+    };
 
     fetchProviders();
   }, []);
 
-  if(providers) {
-    return (
-      <div>
-        {Object.values(providers).map((provider: Provider, i) => (
-          <Button 
-          key={i}
-          title='Sign In'
-          handleClick={() => signIn(provider?.id)}
-          />
-        ))}
-      </div>
-    )
-  };
+  return (
+    <Fragment>
+      {providers ? (
+        <div>
+          {Object.values(providers).map((provider: Provider, i) => (
+            <Button key={i} title="Sign In" handleClick={() => signIn(provider?.id)} />
+          ))}
+        </div>
+      ) : (
+        <p>Loading providers...</p> // Or any desired loading state indicator
+      )}
+    </Fragment>
+  );
 };
+
 
 export default AuthProviders;
