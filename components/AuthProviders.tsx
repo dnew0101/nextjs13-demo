@@ -37,7 +37,7 @@ const AuthProviders = () => {
           ))}
         </div>
       ) : (
-        <p>Loading providers...</p> // Or any desired loading state indicator
+        <p>Loading providers...</p>
       )}
     </Fragment>
   );

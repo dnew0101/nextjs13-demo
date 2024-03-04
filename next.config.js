@@ -5,7 +5,6 @@ const nextConfig = {
         },
         experimental: {
         serverComponentsExternalPackages: ['cloudinary', 'graphql-request'],
-        appDir: true
         },
         eslint: {
         ignoreDuringBuilds: true
