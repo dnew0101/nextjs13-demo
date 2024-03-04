@@ -1,6 +1,6 @@
 ## Project Design
 
-This project is from a Javascript Mastery Tutorial on Next.js 13 (point being, not my own creation), and serves as a segway into utilizing the full functionality of what Next.js has to offer. With this project, I hope to acquire a level of competence and familiarity with this framework, and can get started on applying it to my own, original projects! 
+This project serves as a portal/resource center for me to upload many of my own projects.
 
 Thanks for the guidance, @JavascriptMastery!
 
